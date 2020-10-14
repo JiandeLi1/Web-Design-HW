@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" 
+    integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class = "bg-light"> 
+    <!-- bg-light=gray -->
+    <div class = "container">
+        <div class = "py-5 text-center">
+            <img class = "mb-4 d-block mx-auto" src="./JiandeLIHW4.png " alt="My HW logo" width="120" height="90">
+            <h2>Checkout</h2>
+            <p class="lead">This is Jiande Li CSC473 HW 4</p>
+        </div>
+    </div>
+    
+    <div class = "container">
+        <form class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="FirstName" class = "form-lable">First Name</label>
+                    <input id="FirstName" type="text" class= "form-control" placeholder="Firsr Name" required> 
+                    <div class="invalid-feedback"> Valid first name is required!</div>
+                </div>
+                <div class="col-sm-6">
+                    <label for="LasttName" class = "form-lable">Last Name</label>
+                    <input id="LastName" type="text" class= "form-control" placeholder="Last Name" required> 
+                    <div class="invalid-feedback"> Valid last name is required!</div>
+                </div>
+                <div class="col-12">
+                    <label for="Username" class = "form-lable">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input id="Username" type="text" class= "form-control" placeholder="Username" required>
+                    </div> 
+                    <div class="invalid-feedback"> Valid Username is required!</div>
+                </div>
+                <div class="col-12">
+                    <label for="Email" class = "form-lable">Email</label>
+                    <input id="Username" type="text" class= "form-control" placeholder="Email" required>
+                    <div class="invalid-feedback"> Valid Email is required!</div>
+                </div>
+                <div class="col-12">
+                    <label for="BAddress" class = "form-lable">Billing Address</label>
+                    <input id="BAddress" type="text" class= "form-control" placeholder="Billing Address" required>
+                    <div class="invalid-feedback"> Valid Billing Address is required!</div>
+                </div>
+                <div class="col-12">
+                    <label for="BAddress2" class = "form-lable">Billing Address 2 (Optional)</label>
+                    <input id="BAddresss2" type="text" class= "form-control" placeholder="Billing Address">
+                </div>
+                
+                <div class="col-md-4">
+                    <label for="country" class = "form-label">
+                        Country
+                    </label>
+                    <select name="" id="country" class ="form-select" required>
+                        <option value="">Choose...</option>
+                        <option value="United States">United States</option>
+                    </select>
+                    <div class="invalid-feedback"> Country is required!</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="State" class = "form-label">
+                        State
+                    </label>
+                    <select name="" id="country" class ="form-select" required>
+                        <option value="">Choose...</option>
+                        <option value="NY">New York</option>
+                        <option value="CA">California</option>
+                    </select>
+                    <div class="invalid-feedback"> State is required!</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="Zip" class = "mb-2">Zip</label>
+                    <input id="Zip" type="text" class= "form-control" placeholder="Zip Codee" required> 
+                    <div class="invalid-feedback"> Zip code is required!</div>
+                </div>
+                
+                <!-- checkbox section -->
+                <hr class="my-4">
+                <div id = "checkboxsection" class="col-12">
+                    <div class="form-check mb-2"> 
+                        <input id="sameAddress" type="checkbox" class="form-check-input" onchange='handleChange(this);'>
+                        <label for="sameAddress">Shipping address is the same as my billing address</label>
+                    </div>
+                    <div id="shippingaddress">
+                      <div class="col-12">
+                        <label for="SAddress" class = "form-lable">Shipping Address</label>
+                        <input id="SAddress" type="text"  class= "form-control" placeholder="Shipping Address" required>
+                        <div class="invalid-feedback"> Valid Shipping Address is required!</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="SAddress2" class = "form-lable">Shipping Address 2 (Optional)</label>
+                        <input id="SAddress2" type="text"  class= "form-control" placeholder="Shipping Address">
+                    </div>
+                    </div>
+                    <div class="form-check mt-3"> 
+                        <input id="saveInfo" type="checkbox" class="form-check-input">
+                        <label for="saveInfo">Save this information for next time</label>
+                    </div>
+                </div>
+                <!-- payment section -->
+                <hr class="my-4">  
+                 <h4 class="mb-3">Payments</h4>  
+                <div class="form-check">
+                    <input id="credit" type="radio"  name="paymentMethod" class="form-check-input" checked required>
+                    <label for="credit">Credit Card  <i class="fas fa-credit-card"></i></label>
+                </div>
+                <div class="form-check">
+                    <input id="Debit" type="radio"  name="paymentMethod" class="form-check-input" required>
+                    <label for="Debit">Debit Card  <i class="fas fa-credit-card"></i></label>
+                </div>
+                <div class="form-check">
+                    <input id="PayPal" type="radio"  name="paymentMethod" class="form-check-input" required>
+                    <label for="PayPal">PayPal <i class="fab fa-paypal"></i> </label>
+                </div>
+                <div class="row my-3 gy-3">
+                    <div class="col-md-6">
+                        <label for="CardName" class="form-label">Name on Card</label>
+                        <input id="CardName" type="text" class= "form-control" placeholder="Name on card" required>
+                        <small class="text-muted">Full name as displayed on card</small>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="CardNumber" class="form-label">Credit Card Number</label>
+                        <input id="Credit Card Number" type="text" class= "form-control" placeholder="Credit Card Number" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="Expiration" class="form-label">Crad Expiration data</label>
+                        <input id="Expiration" type="text" class= "form-control" placeholder="Expiration data" required>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <label for="CVV" class="form-label">Crad CVV</label>
+                        <input id="CVV" type="text" class= "form-control" placeholder="CVV" required>
+                    </div>
+                    <hr class="my-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Your Shoppingcart</span>
+                        <span class="badge bg-secondary rounded-pill">Your total item: 3</span>
+                      </h4>
+                      <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                          <div>
+                            <h6 class="my-0 mt-1 mb-1">Item 1</h6>
+                          </div>
+                          <span>$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                          <div>
+                            <h6 class="my-0 mt-1 mb-1">Item 2</h6>
+                          </div>
+                          <span >$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                          <div>
+                            <h6 class="my-0 mt-1 mb-1">Item 3</h6>
+                          </div>
+                          <span>$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                              <h6 class="my-0 mt-1 mb-1">Item 4</h6>
+                            </div>
+                            <span >$5</span>
+                          </li>
+                        <li class="list-group-item d-flex justify-content-between bg-light">
+                          <div class="text-success">
+                            <h6 class="my-0">Promo code</h6>
+                            <small>Big-Fall-Sale</small>
+                          </div>
+                          <span>−$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                          <span>Total (USD)</span>
+                          <strong>$15</strong>
+                        </li>
+                      </ul>
+              
+                      <form>
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Promo code">
+                          <button type="submit" class="btn btn-secondary">Redeem</button>
+                        </div>
+                      </form>
+                    </div>
+                    <hr class="my-4">
+                    
+                    <button class="btn btn-primary btn-lg" type="submit">Continue to Checkout</button>
+               </div>
+                
+               
+
+                <footer>
+                    <div class = "container">
+                        <div class = "row mt-5">
+                            <div class="col-md-7 offset-md-2 text-center" >
+              
+                               <p> <i class="fas fa-envelope-square"></i>Email:<a href ='ALEXLIJD@gmail.com'>AlexLijd@gmai.com</a><br>
+                                   OR <i class="fas fa-envelope-square"></i>Email:<a href ='JLI030@citymail.cuny.edu'>JLI030@citymail.cuny.edu</a><br>
+                                   <p style="font-weight:normal;  font-family:Cabin,'Microsoft Yahei' !important; font-size:12px;"><span style="color:#c59d5f;">　Jiande Li HW4</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>    
+                  </footer>
+
+                
+            </div>
+        </form>
+        
+    </div>
+    
+    
+    
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+<script>
+    (function () {
+
+  var VForm = document.querySelectorAll('.needs-validation')
+  Array.prototype.slice.call(VForm)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+
+     
+      // function BeSameAddress(){
+      //   document.getElementById("SAddress").disabled=true;
+      //   document.getElementById("SAddress2").disabled=true;
+      // }
+
+    var shipping=document.getElementById("shippingaddress");
+    var CheckboxSection=document.getElementById("checkboxsection");
+    function handleChange(checkbox) {
+    if(checkbox.checked == true){
+      shipping.style.height="0%";
+      shipping.style.overflow="hidden";
+      
+
+    }else{
+      shipping.style.height="70%";
+   }
+}
+</script>
+</body>
+</html>
